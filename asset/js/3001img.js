@@ -3,7 +3,7 @@ $.fn.fileinput.defaults.language = 'zh';
 let $smfile = $("#file");
 $smfile.fileinput({
     // theme: 'fas',
-    uploadUrl: BASE_URL + '/3001imgbed',
+    uploadUrl: 'https://img.131213.xyz/3001imgbed',
     allowedFileExtensions: ['jpeg', 'jpg', 'png', 'gif', 'bmp'],
     // allowedFileExtensions: ['jpeg', 'jpg', 'png', 'gif', 'bmp', 'mp4', 'mov', 'avi'],
     overwriteInitial: false,
