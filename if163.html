@@ -1,0 +1,51 @@
+<style>
+  #myIframe {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 700px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  #myIframe::-webkit-scrollbar {
+    display: none;
+  }
+
+  #myIframe footer {
+    display: none;
+  }
+</style>
+
+<div style="position: absolute;width: 100%;top: -180px;">
+  <iframe id="myIframe" align="center" width="100%" height="800px" src="https://img.131213.xyz/163" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="yes"></iframe>
+</div>
+
+<script>
+window.onload = function() {
+  // 获取 <iframe> 元素
+  var iframeElement = document.querySelector("#myIframe");
+
+  // 检查是否找到了 <iframe> 元素
+  if (iframeElement) {
+    // 等待 <iframe> 加载完成
+    iframeElement.onload = function() {
+      // 在 <iframe> 内部查找 <footer> 元素
+      var iframeDocument = iframeElement.contentDocument || iframeElement.contentWindow.document;
+      var footerElement = iframeDocument.querySelector("footer.footer");
+
+      // 检查是否找到了 <footer> 元素
+      if (footerElement) {
+        // 清空 <footer> 元素的内容
+        footerElement.innerHTML = "";
+      } else {
+        console.log("未找到要删除的 <footer> 元素");
+      }
+    };
+  } else {
+    console.log("未找到 <iframe> 元素");
+  }
+};
+</script>
