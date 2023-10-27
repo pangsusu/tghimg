@@ -1,4 +1,4 @@
-const BASE_URL = https://img.131213.xyz;
+const BASE_URL = window.location.origin;
 $.fn.fileinput.defaults.language = 'zh';
 let $smfile = $("#file");
 $smfile.fileinput({
